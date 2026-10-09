@@ -28,8 +28,8 @@ while True:
 print("output tiles in: ", scan_folder)
 
 #OpenCV reads the image inside the input folder
-# INPUT_IMAGE = cv2.imread("Images/Input_Images/IP_CrabNebula.jpg")
-INPUT_IMAGE = cv2.imread("Images/Input_Images/IP_SiliconWafer.jpg")
+INPUT_IMAGE = cv2.imread(project_folder / "Images/Input_Images/IP_CrabNebula.jpg")
+# INPUT_IMAGE = cv2.imread("Images/Input_Images/IP_SiliconWafer.jpg")
 
 #gets the image height, width, and color channels. slicer needs it to determine how much to move.
 IMAGE_HEIGHT, IMAGE_WIDTH , channels = INPUT_IMAGE.shape
@@ -47,21 +47,19 @@ TILE_STEP = int(TILE_SIZE*(1 - TILE_OVERLAP))
 tile_number = 1
 
 #for loop to create a set of tiles
-for y in range(0, IMAGE_HEIGHT ,TILE_STEP): #for the tiles in the y-axis, take predefined steps from 0 until IMAGE_HEIGHT with steps of size TILE_STEP
-    for x in range(0, IMAGE_WIDTH, TILE_STEP): #for the tiles in x-axis, take predefined steps from 0 until IMAGE_WIDTH with steps of size TILE_STEP
+for ROW, y in enumerate(range(0, IMAGE_HEIGHT ,TILE_STEP)): #for the tiles in the y-axis, take predefined steps from 0 until IMAGE_HEIGHT with steps of size TILE_STEP
+    for COL, x in enumerate(range(0, IMAGE_WIDTH, TILE_STEP)): #for the tiles in x-axis, take predefined steps from 0 until IMAGE_WIDTH with steps of size TILE_STEP
 
         tile = INPUT_IMAGE[y:y+TILE_SIZE, x:x+TILE_SIZE] # get section of the original input using the X and Y values
 
-        filename = scan_folder / f"tile_{tile_number : 03d}.jpg" #file gets a name and goes to scan_folder  
+        filename = scan_folder / f"tile_ROW{ROW : 03d}_COL{COL :03d}.jpg" #file gets a name and goes to scan_folder  
 
-        cv2.imwrite(filename, tile) #writing image tile to the folder
+        cv2.imwrite(str(filename), tile) #writing image tile to the folder
 
         tile_number += 1 #iterate by +1
 
 #print final tile count
 print(f"image sliced into {tile_number} tiles")
 print("=====SLICER FINISHED=====")
-
-
 
 
