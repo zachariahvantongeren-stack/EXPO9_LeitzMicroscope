@@ -44,7 +44,7 @@ def stitch_images(input_folder, output_folder):
 
     print("=====STITCHING FINISHED=====")
 
-def tile_grid(input_folder,output_folder, overlap = 0.3):
+def tile_grid(input_folder,output_folder, overlap = 0.2):
 
     print("=====START TILE GRID STITCHER=====")
 
@@ -114,7 +114,7 @@ def tile_grid(input_folder,output_folder, overlap = 0.3):
 
 
 project_folder = Path(__file__).resolve().parent.parent #define project folder location
-input_folder = project_folder / "Images" / "Output_Images" / "OutputSlices_002" #folder where the tile set of a scan is located
+input_folder = project_folder / "Images" / "Output_Images" / "OutputSlices_004" #folder where the tile set of a scan is located
 output_folder = project_folder / "Images" / "Stitched_Images" # folder where the stitch is placed
 #stitch_images(input_folder, output_folder) #Run stitcher
 tile_grid(input_folder, output_folder)
