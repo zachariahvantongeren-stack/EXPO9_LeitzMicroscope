@@ -13,7 +13,11 @@ def slicer_load_images(image_path):
        
     return image
      
+<<<<<<< Updated upstream
 def slice_Image(image, scan_folder, TILE_SIZE = 100 ,TILE_OVERLAP = 0.2):
+=======
+def slice_Image(image, scan_folder, TILE_SIZE = 250 ,TILE_OVERLAP = 0.2):
+>>>>>>> Stashed changes
 
     #gets the image height, width, and color channels. slicer needs it to determine how much to move.
     IMAGE_HEIGHT, IMAGE_WIDTH = image.shape[:2]
