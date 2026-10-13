@@ -13,7 +13,11 @@ def slicer_load_images(image_path):
        
     return image
      
-def slice_Image(image, scan_folder, TILE_SIZE = 500 ,TILE_OVERLAP = 0.2):
+<<<<<<< Updated upstream
+def slice_Image(image, scan_folder, TILE_SIZE = 100 ,TILE_OVERLAP = 0.2):
+=======
+def slice_Image(image, scan_folder, TILE_SIZE = 250 ,TILE_OVERLAP = 0.2):
+>>>>>>> Stashed changes
 
     #gets the image height, width, and color channels. slicer needs it to determine how much to move.
     IMAGE_HEIGHT, IMAGE_WIDTH = image.shape[:2]
@@ -69,7 +73,7 @@ while True:
 print("output tiles in: ", scan_folder)
 
 #OpenCV reads the image inside the input folder
-input_file = project_folder / "Images" / "Input_Images" / "IP_CrabNebula.jpg"
+input_file = project_folder / "Images" / "Input_Images" / "IP_SiliconWafer.jpg"
 print(f"image name: {input_file.name}")
 
 INPUT_IMAGE = slicer_load_images(input_file)
