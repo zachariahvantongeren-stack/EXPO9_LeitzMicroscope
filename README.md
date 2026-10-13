@@ -11,8 +11,9 @@ the software aims to process individual microscope images and combine them into 
 # Project Modules
 The project is designed as a modular system, with different components responsible for specific microscope automation tasks.
 
-# Current Features
-## Image Slicer
+## Current Status
+
+### Image Slicer
 
 the image slicer is for testing use cases. it divides a larger image into smaller tiles.
 
@@ -20,7 +21,7 @@ the image slicer is for testing use cases. it divides a larger image into smalle
 - saves tiles with identifiers in their filename (row & column).
 - generates test images for the stitching algorithms.
 
-## Grid-based Image stitcher
+### Grid-based Image stitcher
 
 the grid stitcher combines tiles based on their row and column identifiers
 - reads tile coordinates
@@ -30,7 +31,7 @@ the grid stitcher combines tiles based on their row and column identifiers
 
 **current limitation:** the tiles are placed using a predetermined grid position. The program does not correct for positioning error or blends overlapping regions.
 
-## Automatic Image stitcher
+### Automatic Image stitcher
 an alternative stitching method is also implemented that solely relies on the built-in OpenCV stitching capabilities to attempt to align the images automatically.
 
 this method can be used to compare the grid based approach.
@@ -42,13 +43,23 @@ the image processing scripts use Python with the following libraries
 - OpenCV (opencv-python)
 - NumPy
 
-## Current status {Image stitcher}
+## Current status |Image stitcher|
 the image slicer and basic stitching have been implemented and tested using sample images. The software is still under development.
 
 ### known limitations
 - grid stitcher assumes tiles that follow a regular grid
 - grid stitcher is heavily dependent on correctly formatted indentifiers
 - real stitching using microscope images have not been validated yet
+
+# Future Developments
+
+Planned additions for the github:
+- Automated Autofocus: determining autofocus
+- motor control: control the microscope movement
+- camera integration: capture images from the microscope and supply them to image processing
+- system integration: connect individual modules into one coordinated workflow
+
+these modules will be added to this repository in the future. Contributers will be updates as the repository grows
 
 # Contributers
 Zachariah van Tongeren (MC4A) - Image stitching & image slicer 
