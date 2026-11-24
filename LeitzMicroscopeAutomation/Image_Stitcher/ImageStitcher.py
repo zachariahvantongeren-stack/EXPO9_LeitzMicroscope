@@ -107,14 +107,14 @@ def tile_grid(input_folder,output_folder, overlap = 0.3):
         canvas[y:y+height, x:x+width] = image
 
     output_folder.mkdir(parents=True, exist_ok=True)
-    output_file = output_folder / "overview_grid_2.jpg"
+    output_file = output_folder / "overview_grid_Wafer.jpg"
 
     cv2.imwrite(str(output_file), canvas)
     print("Saved grid to:", output_file.resolve())
 
 
 project_folder = Path(__file__).resolve().parent.parent #define project folder location
-input_folder = project_folder / "Images" / "Output_Images" / "OutputSlices_002" #folder where the tile set of a scan is located
+input_folder = project_folder / "Images" / "Output_Images" / "OutputSlices_003" #folder where the tile set of a scan is located
 output_folder = project_folder / "Images" / "Stitched_Images" # folder where the stitch is placed
 #stitch_images(input_folder, output_folder) #Run stitcher
 tile_grid(input_folder, output_folder)
