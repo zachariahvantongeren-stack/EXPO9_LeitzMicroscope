@@ -44,7 +44,7 @@ def stitch_images(input_folder, output_folder):
 
     print("=====STITCHING FINISHED=====")
 
-def tile_grid(input_folder,output_folder, overlap = 0.3):
+def tile_grid(input_folder,output_folder, overlap = 0.2):
 
     print("=====START TILE GRID STITCHER=====")
 
