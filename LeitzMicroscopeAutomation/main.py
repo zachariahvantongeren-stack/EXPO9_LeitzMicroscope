@@ -19,12 +19,15 @@ if __name__ == "__main__":
 
     main()
 
-    position = steppermotor.reset_position
+    init_position = steppermotor.reset_position
 
-    target = steppermotor.move(steppermotor, 0)
+    X_motor = steppermotor()
 
-    move_X_axis = steppermotor.move_to(steppermotor, 10)
+
+
+
     
+
 
 
 

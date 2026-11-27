@@ -7,7 +7,7 @@ class Motorconfig:
     steps_per_revolutions: int = 200
     max_speed: float = 20.0
     microstepping: int = 8
-    gear_ratio: int
+    gear_ratio: int = 10
 
 
 class steppermotor:
@@ -40,7 +40,7 @@ class steppermotor:
 
     def set_speed(self, speed):
 
-        if speed < 0 :
+        if speed < 0:
             print("speed cannot be negative")
 
 
