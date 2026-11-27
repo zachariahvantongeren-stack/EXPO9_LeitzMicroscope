@@ -53,6 +53,10 @@ class steppermotor:
         self.speed = speed
         
         pass
+
+    #def set_accelaration(self, accelaration):
+    # might implement an acceleration curve/ max accelaration.
+    # between pictures the movement might just be linear
     
     def move(self, distance):
 
