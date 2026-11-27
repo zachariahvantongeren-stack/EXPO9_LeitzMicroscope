@@ -54,16 +54,12 @@ class steppermotor:
         
         pass
     
-
-
     def move(self, distance):
 
        target = self.target_position + distance
 
        self.move_to(target)
 
-
-        
     pass
 
     def move_to(self, position):
