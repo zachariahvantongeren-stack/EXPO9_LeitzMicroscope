@@ -16,8 +16,17 @@ def main():
 
 
 if __name__ == "__main__":
-    
+
     main()
+
+    position = steppermotor.reset_position
+
+    target = steppermotor.move(steppermotor, 0)
+
+    move_X_axis = steppermotor.move_to(steppermotor, 10)
+    
+
+
 
 
     

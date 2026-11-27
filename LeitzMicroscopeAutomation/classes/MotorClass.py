@@ -4,9 +4,9 @@ from dataclasses import dataclass
 @dataclass
 class Motorconfig:
 
-    steps_per_revolutions: int
-    max_speed: float
-    microstepping: int
+    steps_per_revolutions: int = 200
+    max_speed: float = 20.0
+    microstepping: int = 8
     gear_ratio: int
 
 
